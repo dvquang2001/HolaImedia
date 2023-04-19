@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_200">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHome1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        app:layout_constraintHeight_percent=".15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/imedia"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_home"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHome2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/feature_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutHome1"
+        app:layout_constraintVertical_bias=".7">
+
+        <TextView
+            android:id="@+id/tvDeliveryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/delivery_title"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutDelivery"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="8dp"
+            android:background="@drawable/sub_feature_background"
+            android:elevation="4dp"
+            app:layout_constraintHeight_percent=".2"
+            app:layout_constraintTop_toBottomOf="@id/tvDeliveryTitle">
+
+            <include
+                android:id="@+id/layoutDatDonGiaoHang"
+                layout="@layout/layout_feature_delivery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/layoutDanhSachDonHang"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/layoutDanhSachDonHang"
+                layout="@layout/layout_feature_goods_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/layoutDonChoXacNhan"
+                app:layout_constraintStart_toEndOf="@id/layoutDatDonGiaoHang"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/layoutDonChoXacNhan"
+                layout="@layout/layout_feature_unchecked_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/layoutThongKe"
+                app:layout_constraintStart_toEndOf="@id/layoutDanhSachDonHang"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/layoutThongKe"
+                layout="@layout/layout_feature_statistical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/layoutDonChoXacNhan"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/tvDigitalTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/digital_title"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutDelivery" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutDigital"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="8dp"
+            android:background="@drawable/sub_feature_background"
+            android:elevation="4dp"
+            app:layout_constraintHeight_percent=".2"
+            app:layout_constraintTop_toBottomOf="@id/tvDigitalTitle">
+
+            <include
+                android:id="@+id/layoutNapDienThoai"
+                layout="@layout/layout_feature_mobile_recharge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/layoutNapData"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/layoutNapData"
+                layout="@layout/layout_feature_data_recharege"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/layoutThanhToanHoaDon"
+                app:layout_constraintStart_toEndOf="@id/layoutNapDienThoai"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/layoutThanhToanHoaDon"
+                layout="@layout/layout_feature_bill_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/layoutNhanTin"
+                app:layout_constraintStart_toEndOf="@id/layoutNapData"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/layoutNhanTin"
+                layout="@layout/layout_feature_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/layoutThanhToanHoaDon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvFoodTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/food_title"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutDigital" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutFood"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="8dp"
+            android:background="@drawable/sub_feature_background"
+            android:elevation="4dp"
+            app:layout_constraintHeight_percent=".2"
+            app:layout_constraintTop_toBottomOf="@id/tvFoodTitle">
+
+            <include
+                android:id="@+id/layoutDoAn"
+                layout="@layout/layout_feature_food"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/layoutGioHang"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/layoutGioHang"
+                layout="@layout/layout_feature_cart"
+                android:layout_width="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/layoutDonMua"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/layoutDoAn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/layoutDonMua"
+                layout="@layout/layout_feature_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/layoutThongKeDoAn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/layoutGioHang"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/layoutThongKeDoAn"
+                layout="@layout/layout_feature_food_analysis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/layoutDonMua"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

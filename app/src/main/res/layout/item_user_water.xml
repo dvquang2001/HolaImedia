@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/layout_item"
+    >
+    <TextView
+        android:id="@+id/tvma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ma:1"
+        />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="name:Quang "
+        />
+    <TextView
+        android:id="@+id/tv_sdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3585577"
+        />
+    <TextView
+        android:id="@+id/tv_diachi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="303 Hoàng Mai"
+        />
+    <TextView
+        android:id="@+id/tv_kyhan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="kỳ thanh toán:2/2023"
+        />
+    <TextView
+        android:id="@+id/tv_tien"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="10000"
+        />
+</LinearLayout>

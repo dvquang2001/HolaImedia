@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="409dp"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_thang"
+                android:layout_width="50dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="2GB/ngày    (gói ngày)" />
+
+            <Button
+                android:id="@+id/btn_ngay"
+                android:layout_width="50dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:text="1GB/ngày     (gói ngày)" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="409dp"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        tools:layout_editor_absoluteX="1dp">
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_500"
+                android:layout_width="50dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="5GB/tuần" />
+
+            <Button
+                android:id="@+id/btn300"
+                android:layout_width="50dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:text="6GB/tuần" />
+
+            <Button
+                android:id="@+id/btn100"
+                android:layout_width="50dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:text="8GB/tuần" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="409dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        tools:layout_editor_absoluteX="1dp">
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_1g"
+                android:layout_width="50dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="10GB/tháng" />
+
+            <Button
+                android:id="@+id/btn_2g"
+                android:layout_width="50dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:text="20GB/tháng" />
+
+            <Button
+                android:id="@+id/btn3g"
+                android:layout_width="50dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:text="30Gb/tháng" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="26dp"
+        android:text="Tổng tiền"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtgoi" />
+
+    <TextView
+        android:id="@+id/txttiensau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="14dp"
+        android:text="30000"
+        android:textColor="@color/red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <Button
+        android:id="@+id/btnthanhtoan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="128dp"
+        android:text="thanh toán"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txttiensau" />
+
+    <TextView
+        android:id="@+id/txtgoi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="26dp"
+        android:text="Gói"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+    <EditText
+        android:id="@+id/txtsdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Số điện thoại"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txttiensau" />
+
+    <EditText
+        android:id="@+id/txtma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/txtsdt" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:text="Nhập mã pin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtsdt" />
+
+    <TextView
+        android:id="@+id/txtmk2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="241dp"
+        android:layout_marginTop="53dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

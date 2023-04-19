@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivOrder"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:padding="6dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvOrderName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/ivOrder"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/app_name" />
+
+        <TextView
+            android:id="@+id/tvOrderPriceTitle"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/price"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/tvOrderName"
+            app:layout_constraintTop_toBottomOf="@id/tvOrderName" />
+
+        <TextView
+            android:id="@+id/tvOrderPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvOrderPriceTitle"
+            app:layout_constraintStart_toEndOf="@id/tvOrderPriceTitle"
+            tools:text="@string/default_price" />
+
+        <TextView
+            android:id="@+id/tvOrderQuantityTitle"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/amount"
+            app:layout_constraintStart_toStartOf="@id/tvOrderName"
+            app:layout_constraintTop_toBottomOf="@id/tvOrderPrice" />
+
+        <TextView
+            android:id="@+id/tvOrderQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/tvOrderQuantityTitle"
+            app:layout_constraintStart_toEndOf="@id/tvOrderQuantityTitle"
+            tools:text="1" />
+
+        <TextView
+            android:id="@+id/tvTotalOrderPriceTitle"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/total_amount"
+            app:layout_constraintStart_toStartOf="@id/tvOrderName"
+            app:layout_constraintTop_toBottomOf="@id/tvOrderQuantity" />
+
+        <TextView
+            android:id="@+id/tvTotalOrderPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/tvTotalOrderPriceTitle"
+            app:layout_constraintStart_toEndOf="@id/tvTotalOrderPriceTitle"
+            tools:text="@string/default_price" />
+
+        <TextView
+            android:id="@+id/tvCurrentDateTitle"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/purchase_date"
+            app:layout_constraintStart_toStartOf="@id/tvOrderName"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalOrderPrice" />
+
+        <TextView
+            android:id="@+id/tvCurrentDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintBottom_toBottomOf="@id/tvCurrentDateTitle"
+            app:layout_constraintStart_toEndOf="@id/tvCurrentDateTitle"
+            tools:text="03 09, 2023" />
+
+        <TextView
+            android:id="@+id/tvCurrentTimeTitle"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/purchase_time"
+            app:layout_constraintStart_toStartOf="@id/tvCurrentDateTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvCurrentDateTitle" />
+
+        <TextView
+            android:id="@+id/tvCurrentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:layout_constraintBottom_toBottomOf="@id/tvCurrentTimeTitle"
+            app:layout_constraintStart_toEndOf="@id/tvCurrentTimeTitle"
+            tools:text="21:38:57 CH" />
+
+        <ImageView
+            android:id="@+id/ivDeleteOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCurrentTime" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
