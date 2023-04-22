@@ -64,7 +64,7 @@
             android:name=".activity.food.CartActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.digital.bill_payment.WaterPayment"
+            android:name=".activity.digital.bill_payment.AddWaterBillActivity"
             android:exported="false" />
         <activity
             android:name=".activity.digital.bill_payment.DetailpaymentActivity"

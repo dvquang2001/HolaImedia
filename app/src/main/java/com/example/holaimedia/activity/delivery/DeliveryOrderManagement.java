@@ -4,6 +4,7 @@ package com.example.holaimedia.activity.delivery;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +26,7 @@ import java.util.List;
 
 public class DeliveryOrderManagement extends AppCompatActivity {
     private RecyclerView rcvUsers;
+    private ImageView ivBack;
     private OrderShipAdapter mUserAdapter;
     private DatabaseReference myRef;
     private List<OrderManagement> mListUsers;
@@ -34,7 +36,8 @@ public class DeliveryOrderManagement extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivery_order_management);
 
-        rcvUsers = findViewById(R.id.rcv_ordership);
+        ivBack = findViewById(R.id.ivBack);
+        rcvUsers = findViewById(R.id.rcvOrderShip);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         rcvUsers.setLayoutManager(linearLayoutManager);
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
@@ -43,6 +46,8 @@ public class DeliveryOrderManagement extends AppCompatActivity {
         mUserAdapter = new OrderShipAdapter(this, mListUsers);
         rcvUsers.setAdapter(mUserAdapter);
         getListUserFromRealTimeDatabase();
+
+        ivBack.setOnClickListener(view -> finish());
     }
 
     private void getListUserFromRealTimeDatabase() {

@@ -83,7 +83,7 @@ public class OrderManagement {
         Gio = gio;
         Khoiluong = khoiluong;
         Ngay = ngay;
-        SDT = SDT;
+        this.SDT = SDT;
         Tien = tien;
         Diachigui = diachigui;
         Diachinhan = diachinhan;

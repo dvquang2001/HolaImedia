@@ -1,7 +1,6 @@
 package com.example.holaimedia.adapter.digital;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,15 +10,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.holaimedia.R;
-import com.example.holaimedia.activity.analysis.ChartDeliveryActivity;
 import com.example.holaimedia.model.digital.Transaction;
 
 import java.util.List;
 
 public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.ViewHolder> {
 
-    private List<Transaction> transactions;
-    private boolean isAdmin;
+    private final List<Transaction> transactions;
+    private final boolean isAdmin;
 
     public TransactionAdapter(List<Transaction> transactions, boolean isAdmin) {
         this.transactions = transactions;
@@ -43,7 +41,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         return transactions.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView tvEmail, tvMoney, tvDateTransaction;
 
         public ViewHolder(@NonNull View itemView) {
@@ -59,10 +57,6 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
            tvEmail.setVisibility(isAdmin ? View.VISIBLE : View.GONE);
            tvMoney.setText("Số tiền giao dịch: " + transaction.getMoney() + " VND");
            tvDateTransaction.setText("Thời gian giao dịch: " + transaction.getTransactionDate());
-
-           itemView.setOnClickListener(view -> {
-               itemView.getContext().startActivity(new Intent(itemView.getContext(), ChartDeliveryActivity.class));
-           });
         }
 
     }

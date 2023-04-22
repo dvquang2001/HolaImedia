@@ -39,14 +39,14 @@ public class OrderShipAdapter extends RecyclerView.Adapter<OrderShipAdapter.User
         if (user == null) {
             return;
         }
-        holder.tvSDT.setText("Số điện thoại:" + user.getSdt());
-        holder.tvHoten.setText("Họ tên:" + user.getHoten());
-        holder.tvKhoiluong.setText("Khối lượng:" + user.getKhoiluong() + " kg");
-        holder.tvdiachigui.setText("Địa chỉ gửi:" + user.getDiachigui());
-        holder.tvdiachinhan.setText("Địa chỉ nhận:" + user.getDiachinhan());
-        holder.tvTien.setText(":" + user.getTien() + " VNĐ");
-        holder.tvNgay.setText("Ngày:" + user.getNgay());
-        holder.tvGio.setText("Thời gian:" + user.getGio());
+        holder.tvSDT.setText("Số điện thoại: " + user.getSdt());
+        holder.tvHoten.setText("Họ tên: " + user.getHoten());
+        holder.tvKhoiluong.setText("Khối lượng: " + user.getKhoiluong() + " kg");
+        holder.tvdiachigui.setText("Địa chỉ gửi: " + user.getDiachigui());
+        holder.tvdiachinhan.setText("Địa chỉ nhận: " + user.getDiachinhan());
+        holder.tvTien.setText(user.getTien() + " VNĐ");
+        holder.tvNgay.setText("Ngày: " + user.getNgay());
+        holder.tvGio.setText("Thời gian: " + user.getGio());
         holder.layout_item.setOnClickListener(v -> {
 
         });

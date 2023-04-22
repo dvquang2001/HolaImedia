@@ -40,7 +40,7 @@ public class BillPaymentActivity extends AppCompatActivity {
     private void initViewListener() {
         ivBack.setOnClickListener(view -> finish());
         ivAdd.setOnClickListener(v -> {
-            Intent intent=new Intent(getApplicationContext(), WaterPayment.class);
+            Intent intent=new Intent(getApplicationContext(), AddWaterBillActivity.class);
             startActivity(intent);
         });
         layoutWaterBill.setOnClickListener(v -> {

@@ -103,7 +103,7 @@
     <string name="forgot_password">Quên mật khẩu</string>
     <string name="confirm">Xác nhận</string>
     <string name="log_out">Đăng xuất</string>
-    <string name="name">Name</string>
+    <string name="name">Họ tên</string>
     <string name="km">km</string>
     <string name="viettel_card">Viettel</string>
     <string name="vinaphone_card">Vinaphone</string>
@@ -202,6 +202,11 @@
     <string name="bill_payment_title">Thanh toán hóa đơn</string>
     <string name="water">Nước</string>
     <string name="list_title">Danh sách hóa đơn</string>
+    <string name="order_list_title">Danh sách đơn vận chuyển</string>
+    <string name="add_bill">Thêm hóa đơn</string>
+    <string name="bill_code">Mã hóa đơn</string>
+    <string name="deadline">Kỳ hạn thanh toán</string>
+    <string name="udpate_profile">Cập nhật tài khoản</string>
 
 
 </resources>

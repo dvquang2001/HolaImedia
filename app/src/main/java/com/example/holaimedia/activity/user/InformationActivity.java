@@ -80,6 +80,11 @@ public class InformationActivity extends AppCompatActivity {
         tvEmail = findViewById(R.id.tvEmail);
         tvAddress = findViewById(R.id.tvAddress);
         btnModify = findViewById(R.id.btnModify);
+        if(user.getProfileImg().isEmpty()) {
+            imgProfile.setImageResource(R.drawable.ic_launcher_foreground);
+        } else {
+            Glide.with(this).load(user.getProfileImg()).into(imgProfile);
+        }
     }
 
     private void initData() {
