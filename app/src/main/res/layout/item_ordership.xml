@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/layout_item1"
+    >
+
+    <TextView
+        android:id="@+id/tvsdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0376802180"
+        android:textColor="@color/red" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="name:Quang "
+        />
+    <TextView
+        android:id="@+id/tvkhoiluong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3585577"
+        />
+    <TextView
+        android:id="@+id/tv_diachi1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="303 Hoàng Mai"
+        />
+
+    <TextView
+        android:id="@+id/tv_diachi2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="303 cầu giấy" />
+
+    <TextView
+        android:id="@+id/tv_tien"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="20000" />
+
+    <TextView
+        android:id="@+id/tv_ngay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="16-12-2023" />
+
+    <TextView
+        android:id="@+id/tv_gio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+</LinearLayout>

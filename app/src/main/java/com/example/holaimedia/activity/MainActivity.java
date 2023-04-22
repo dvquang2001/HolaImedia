@@ -2,13 +2,17 @@ package com.example.holaimedia.activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.holaimedia.R;
+import com.example.holaimedia.activity.auth.SplashActivity;
 import com.example.holaimedia.adapter.view_pager.MainPagerAdapter;
+import com.example.holaimedia.model.auth.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.gson.Gson;
 
 public class MainActivity extends AppCompatActivity {
 

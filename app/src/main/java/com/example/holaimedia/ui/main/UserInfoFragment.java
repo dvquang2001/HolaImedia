@@ -1,5 +1,6 @@
 package com.example.holaimedia.ui.main;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -27,6 +28,7 @@ public class UserInfoFragment extends Fragment {
     private final List<String> features = new ArrayList<>();
     private User user;
     private Gson gson;
+
     public UserInfoFragment() {
     }
 
@@ -48,11 +50,11 @@ public class UserInfoFragment extends Fragment {
         features.add("Điều khoản và quy định");
         features.add("Đăng xuất");
 
-        TextView tvEmail = root.findViewById(R.id.tvEmail);
-        tvEmail.setText(user.getEmail());
+        TextView tvUserEmail = root.findViewById(R.id.tvUserEmail);
+        tvUserEmail.setText(user.getEmail());
 
         ListView lvUserFeature = root.findViewById(R.id.lvUserFeature);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1,features);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1, features);
         lvUserFeature.setAdapter(adapter);
 
         lvUserFeature.setOnItemClickListener((adapterView, view, position, l) -> {
@@ -71,6 +73,21 @@ public class UserInfoFragment extends Fragment {
     }
 
     private void showLogoutDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
+        builder.setMessage(R.string.logout_message)
+                .setTitle(R.string.log_out)
+                .setPositiveButton(R.string.ok, (dialogInterface, i) -> {
+                    SplashActivity.sharedPreferences.edit().putBoolean(SplashActivity.IS_LOGIN, false).apply();
+                    SplashActivity.sharedPreferences.edit().putString(SplashActivity.USER_ID, "").apply();
+                    SplashActivity.sharedPreferences.edit().putString(SplashActivity.USER_DATA, "").apply();
+                    startActivity(new Intent(requireContext(), SplashActivity.class));
+                    requireActivity().finish();
+                })
+                .setNegativeButton(R.string.cancel, (dialogInterface, i) -> {
+                    dialogInterface.dismiss();
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

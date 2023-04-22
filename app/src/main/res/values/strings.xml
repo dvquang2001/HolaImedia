@@ -109,7 +109,7 @@
     <string name="vinaphone_card">Vinaphone</string>
     <string name="mobiphone_card">Mobiphone</string>
     <string name="hinh_thuc_thanh_toan">Hình thức thanh toán</string>
-    <string name="defalut_money">0</string>
+    <string name="default_title_money">0</string>
     <string name="thanh_toan_qua_vi">Thanh toán qua ví</string>
     <string name="thanh_toan_ngan_hang">Thanh toán ngân hàng</string>
     <string name="loai_the">Loại thẻ</string>
@@ -159,5 +159,49 @@
     <string name="phone_info">🔸Số điện thoại: </string>
     <string name="address_info">🔸Địa chỉ: </string>
     <string name="email_info">🔸Email: </string>
+    <string name="modify">Chỉnh sửa</string>
+    <string name="hola_wallet">Ví Hola</string>
+    <string name="vietnam_denominations">đ</string>
+
+
+    <string name="mobile_recharge">Nạp điện thoại</string>
+    <string name="mobile_data_recharge">Nạp 3G/4G</string>
+    <string name="page_network">Chọn nhà mạng</string>
+    <string name="denominations">Chọn mệnh giá</string>
+
+    <string name="mobile_card_10">10.000</string>
+    <string name="mobile_card_20">20.000</string>
+    <string name="mobile_card_50">50.000</string>
+
+    <string name="mobile_card_100">100.000</string>
+    <string name="mobile_card_200">200.000</string>
+    <string name="mobile_card_500">500.000</string>
+
+
+    <string name="mobile_data_1">100MB/1 ngày \n 3.000</string>
+    <string name="mobile_data_2">500MB/3 ngày \n 10.000</string>
+    <string name="mobile_data_3">1GB/30 ngày \n 40.000</string>
+
+    <string name="mobile_data_4">3GB/30 ngày \n 70.000</string>
+    <string name="mobile_data_5">5GB/30 ngày \n 90.000</string>
+    <string name="mobile_data_6">8GB/30 ngày \n 125.000</string>
+
+    <string name="mobile_data_7">15GB/30 ngày  \n 230.000</string>
+    <string name="mobile_data_8">500MB/1 ngày \n 5.000</string>
+    <string name="mobile_data_9">3GB/180 phút \n 9.000</string>
+
+    <string name="mobile_data_10">1GB/7 ngày \n 17.000</string>
+    <string name="mobile_data_11">2GB/1 ngày \n 10.000</string>
+    <string name="mobile_data_12">3GB/3 ngày \n 15.0000</string>
+    <string name="vietnam_currency">VND</string>
+    <string name="data_type">Gói cước:</string>
+
+
+    <string name="empty_list_cart">Chưa có gì ở giỏ hàng, cùng đi mua sắm thôi nào</string>
+    <string name="empty_list_order">Chưa có đơn hàng nào, cùng thanh toán nào</string>
+    <string name="bill_payment_title">Thanh toán hóa đơn</string>
+    <string name="water">Nước</string>
+    <string name="list_title">Danh sách hóa đơn</string>
+
 
 </resources>

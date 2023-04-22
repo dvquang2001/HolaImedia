@@ -3,6 +3,7 @@ package com.example.holaimedia.activity.digital;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,10 +25,11 @@ import java.util.HashMap;
 import java.util.Random;
 
 public class PayViaBankActivity extends AppCompatActivity {
-    TextView tvNhaMang, tvMenhGia;
-    Button btnPay;
-    EditText etTransactionName, etCardNumber, etEffectiveDate;
-    AlertDialog.Builder alertBuilder;
+    private ImageView ivBack;
+    private TextView tvNhaMang, tvMenhGia;
+    private Button btnPay;
+    private EditText etTransactionName, etCardNumber, etEffectiveDate;
+    private AlertDialog.Builder alertBuilder;
     private FirebaseFirestore db;
     private FirebaseDatabase firebaseDatabase;
     private String userID;
@@ -55,6 +57,7 @@ public class PayViaBankActivity extends AppCompatActivity {
     }
 
     private void initViews() {
+        ivBack = findViewById(R.id.ivBack);
         tvNhaMang = findViewById(R.id.tvNhaMang);
         tvMenhGia = findViewById(R.id.tvMenhGia);
         etTransactionName = findViewById(R.id.etTransactionName);
@@ -72,6 +75,7 @@ public class PayViaBankActivity extends AppCompatActivity {
     }
 
     private void initViewListener() {
+        ivBack.setOnClickListener(view -> finish());
         Random random = new Random();
         int seri = random.nextInt(1000000);
         int pin = random.nextInt(1000000000);
@@ -89,6 +93,7 @@ public class PayViaBankActivity extends AppCompatActivity {
             );
             alertBuilder.setPositiveButton("Ok", (dialogInterface, i) -> {
                 dialogInterface.dismiss();
+                finish();
                 Toast.makeText(PayViaBankActivity.this, "Cảm ơn đã sự dụng dịch vụ", Toast.LENGTH_LONG).show();
             });
             alertBuilder.setNegativeButton("Cancel", (dialogInterface, i) -> dialogInterface.dismiss());

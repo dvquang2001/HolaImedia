@@ -12,12 +12,12 @@
         android:layout_height="0dp"
         android:paddingHorizontal="16dp"
         android:paddingTop="16dp"
-        app:layout_constraintHeight_percent=".15"
+        app:layout_constraintHeight_percent=".2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-
+            android:id="@+id/tvAppName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/imedia"
@@ -34,6 +34,59 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutWallet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sub_feature_background"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAppName"
+            app:layout_constraintVertical_bias="0.238">
+
+            <ImageView
+                android:id="@+id/ivWallet"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="24dp"
+                android:src="@drawable/ic_wallet"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvWallet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/hola_wallet"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/ivWallet"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/default_title_money"
+                android:textColor="@color/yellow_500"
+                app:layout_constraintStart_toStartOf="@id/tvWallet"
+                app:layout_constraintTop_toBottomOf="@id/tvWallet" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/vietnam_denominations"
+                android:textColor="@color/yellow_500"
+                app:layout_constraintStart_toEndOf="@id/tvBalance"
+                app:layout_constraintTop_toTopOf="@id/tvBalance" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -52,6 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/delivery_title"
+            android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -117,6 +171,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/digital_title"
+            android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -180,6 +235,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/food_title"
+            android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -209,9 +265,9 @@
                 android:id="@+id/layoutGioHang"
                 layout="@layout/layout_feature_cart"
                 android:layout_width="wrap_content"
-                app:layout_constraintEnd_toStartOf="@id/layoutDonMua"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/layoutDonMua"
                 app:layout_constraintStart_toEndOf="@id/layoutDoAn"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -220,8 +276,8 @@
                 layout="@layout/layout_feature_order"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toStartOf="@id/layoutThongKeDoAn"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/layoutThongKeDoAn"
                 app:layout_constraintStart_toEndOf="@id/layoutGioHang"
                 app:layout_constraintTop_toTopOf="parent" />
 

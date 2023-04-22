@@ -3,201 +3,229 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/purple_200">
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="409dp"
-        android:layout_height="100dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutBanner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="8dp"
+        app:layout_constraintHeight_percent=".1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mobile_data_recharge"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/feature_background"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        android:paddingHorizontal="8dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutBanner"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="0dp">
 
-        <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:orientation="horizontal">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/feature_background"
+            android:orientation="vertical"
+            android:paddingHorizontal="8dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutBanner"
+            app:layout_constraintVertical_bias=".7">
+
+            <TextView
+                android:id="@+id/tvSelect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/page_network"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutSelect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/sub_feature_background"
+                android:elevation="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvSelect">
+
+                <com.example.holaimedia.utils.CenteredRecyclerView
+                    android:paddingHorizontal="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/rvNetwork"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvDenominations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/denominations"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutSelect" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/sub_feature_background"
+                android:elevation="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvDenominations">
+
+                <com.example.holaimedia.utils.CenteredRecyclerView
+                    android:paddingHorizontal="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:paddingBottom="12dp"
+                    android:id="@+id/rvCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/tvLoaiTheTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/loai_the"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutCard" />
+
+            <TextView
+                android:id="@+id/tvLoaiThe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                tools:text="@string/viettel_card"
+                android:textColor="@color/red"
+                app:layout_constraintStart_toEndOf="@id/tvLoaiTheTitle"
+                app:layout_constraintTop_toTopOf="@id/tvLoaiTheTitle" />
+
+            <TextView
+                android:id="@+id/tvGoiCuocTitle"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="24dp"
+                android:text="@string/data_type"
+                app:layout_constraintTop_toBottomOf="@id/tvLoaiTheTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvGoiCuoc"
+                android:textColor="@color/red"
+                app:layout_constraintStart_toStartOf="@id/tvLoaiThe"
+                app:layout_constraintTop_toTopOf="@id/tvGoiCuocTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvMenhGiaTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/menh_gia"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvGoiCuocTitle" />
+
+            <TextView
+                android:id="@+id/tvMenhGia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_title_money"
+                android:textColor="@color/red"
+                app:layout_constraintStart_toStartOf="@id/tvLoaiThe"
+                app:layout_constraintTop_toTopOf="@id/tvMenhGiaTitle" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/vietnam_currency"
+                android:textColor="@color/red"
+                app:layout_constraintStart_toEndOf="@id/tvMenhGia"
+                app:layout_constraintTop_toTopOf="@id/tvMenhGia" />
+
+            <EditText
+                android:id="@+id/edtPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="24dp"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/phone_number"
+                android:inputType="number"
+                app:layout_constraintTop_toBottomOf="@id/tvMenhGiaTitle" />
 
             <Button
-                android:id="@+id/btn_thang"
-                android:layout_width="50dp"
-                android:layout_height="100dp"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="1"
-                android:text="2GB/ngày    (gói ngày)" />
+                android:id="@+id/btnThanhToan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="64dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/button_selected_background"
+                android:text="@string/pay"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edtPhoneNumber" />
 
-            <Button
-                android:id="@+id/btn_ngay"
-                android:layout_width="50dp"
-                android:layout_height="100dp"
-                android:layout_marginLeft="20dp"
-                android:layout_weight="1"
-                android:text="1GB/ngày     (gói ngày)" />
-        </LinearLayout>
-    </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="409dp"
-        android:layout_height="100dp"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        tools:layout_editor_absoluteX="1dp">
 
-        <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:orientation="horizontal">
+    </ScrollView>
 
-            <Button
-                android:id="@+id/btn_500"
-                android:layout_width="50dp"
-                android:layout_height="100dp"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="1"
-                android:text="5GB/tuần" />
-
-            <Button
-                android:id="@+id/btn300"
-                android:layout_width="50dp"
-                android:layout_height="100dp"
-                android:layout_marginLeft="20dp"
-                android:layout_weight="1"
-                android:text="6GB/tuần" />
-
-            <Button
-                android:id="@+id/btn100"
-                android:layout_width="50dp"
-                android:layout_height="100dp"
-                android:layout_marginLeft="20dp"
-                android:layout_weight="1"
-                android:text="8GB/tuần" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="409dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        tools:layout_editor_absoluteX="1dp">
-
-        <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btn_1g"
-                android:layout_width="50dp"
-                android:layout_height="100dp"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="1"
-                android:text="10GB/tháng" />
-
-            <Button
-                android:id="@+id/btn_2g"
-                android:layout_width="50dp"
-                android:layout_height="100dp"
-                android:layout_marginLeft="20dp"
-                android:layout_weight="1"
-                android:text="20GB/tháng" />
-
-            <Button
-                android:id="@+id/btn3g"
-                android:layout_width="50dp"
-                android:layout_height="100dp"
-                android:layout_marginLeft="20dp"
-                android:layout_weight="1"
-                android:text="30Gb/tháng" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="26dp"
-        android:text="Tổng tiền"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtgoi" />
-
-    <TextView
-        android:id="@+id/txttiensau"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="14dp"
-        android:text="30000"
-        android:textColor="@color/red"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <Button
-        android:id="@+id/btnthanhtoan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="128dp"
-        android:text="thanh toán"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txttiensau" />
-
-    <TextView
-        android:id="@+id/txtgoi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="26dp"
-        android:text="Gói"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
-
-    <EditText
-        android:id="@+id/txtsdt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:hint="Số điện thoại"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txttiensau" />
-
-    <EditText
-        android:id="@+id/txtma"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="14dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/txtsdt" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:text="Nhập mã pin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtsdt" />
-
-    <TextView
-        android:id="@+id/txtmk2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="241dp"
-        android:layout_marginTop="53dp"
-        android:text="TextView"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.example.holaimedia.activity.transaction;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -18,6 +19,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class RutTienActivity extends AppCompatActivity {
+    private ImageView ivBack;
     private EditText etAmountOfMoney, etTransactionName, etCardNumber, etEffectiveDate;
     private Button btnRutTien;
     private AlertDialog.Builder alertBuilder;
@@ -46,6 +48,7 @@ public class RutTienActivity extends AppCompatActivity {
     }
 
     private void initViews() {
+        ivBack = findViewById(R.id.ivBack);
         etAmountOfMoney = findViewById(R.id.etAmountOfMoney);
         etTransactionName = findViewById(R.id.etTransactionName);
         etCardNumber = findViewById(R.id.etCardNumber);
@@ -55,6 +58,7 @@ public class RutTienActivity extends AppCompatActivity {
     }
 
     private void initViewListener() {
+        ivBack.setOnClickListener(view -> finish());
         btnRutTien.setOnClickListener(v -> {
             if(currentBalance < Integer.parseInt(etAmountOfMoney.getText().toString())) {
                 Toast.makeText(this, "Bạn không đủ tiền để thực hiện rút tiền", Toast.LENGTH_SHORT).show();

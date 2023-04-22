@@ -3,6 +3,8 @@ package com.example.holaimedia.activity.food;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -32,10 +34,9 @@ import java.util.HashMap;
 import java.util.List;
 
 public class CartActivity extends BaseFoodActivity {
-
     private FirebaseFirestore db;
     private FirebaseDatabase firebaseDatabase;
-    private TextView tvTongTien;
+    private TextView tvTongTien, tvEmptyList;
     private Button btnThanhToan;
     private RecyclerView rcvCart;
     private CartAdapter cartAdapter;
@@ -44,8 +45,7 @@ public class CartActivity extends BaseFoodActivity {
     private String adminID;
     private User user;
     private Gson gson;
-
-    private ImageView ivBack;
+    private ImageView ivBack, ivEmptyList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +78,7 @@ public class CartActivity extends BaseFoodActivity {
             } else {
                 Toast.makeText(this, "Error" + task.getException(), Toast.LENGTH_SHORT).show();
             }
+            setupRecyclerView();
         });
 
         initViews();
@@ -86,6 +87,8 @@ public class CartActivity extends BaseFoodActivity {
 
     private void initViews() {
         ivBack = findViewById(R.id.ivBack);
+        tvEmptyList = findViewById(R.id.tvEmptyList);
+        ivEmptyList = findViewById(R.id.ivEmptyList);
         tvTongTien = findViewById(R.id.tvTongTien);
         btnThanhToan = findViewById(R.id.btnThanhToan);
         rcvCart = findViewById(R.id.rcvCart);
@@ -128,6 +131,18 @@ public class CartActivity extends BaseFoodActivity {
             intent.putExtra("itemList", (Serializable) cartList);
             startActivity(intent);
         });
+    }
+
+    private void setupRecyclerView() {
+        if(cartList.isEmpty()) {
+            rcvCart.setVisibility(View.GONE);
+            tvEmptyList.setVisibility(View.VISIBLE);
+            ivEmptyList.setVisibility(View.VISIBLE);
+        } else {
+            rcvCart.setVisibility(View.VISIBLE);
+            tvEmptyList.setVisibility(View.GONE);
+            ivEmptyList.setVisibility(View.GONE);
+        }
     }
 
     @SuppressLint("SimpleDateFormat")

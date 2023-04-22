@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import com.example.holaimedia.R;
 import com.example.holaimedia.activity.auth.SplashActivity;
+import com.example.holaimedia.base.BaseFoodActivity;
 import com.example.holaimedia.model.food.Product;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -20,9 +21,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailActivity extends BaseFoodActivity {
     private TextView tvName, tvPrice, tvDesc, tvQuantity, tvTotalPrice;
-    private ImageView ivIncrease, ivDecrease, ivProduct;
+    private ImageView ivIncrease, ivDecrease, ivProduct, ivBack;
     private Button btnAddToCart;
     FirebaseFirestore fireStore;
     FirebaseAuth auth;
@@ -34,7 +35,7 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detailed);
+        setContentView(R.layout.activity_detail);
 
         fireStore = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
@@ -55,6 +56,7 @@ public class DetailActivity extends AppCompatActivity {
 
     private void initViews() {
         ivProduct = findViewById(R.id.ivProduct);
+        ivBack = findViewById(R.id.ivBack);
         tvName = findViewById(R.id.tvName);
         tvPrice = findViewById(R.id.tvPrice);
         tvDesc = findViewById(R.id.tvDescription);
@@ -80,6 +82,7 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void initViewListener() {
+        ivBack.setOnClickListener(view -> finish());
         btnAddToCart.setOnClickListener(v -> addedToCart());
         ivIncrease.setOnClickListener(v -> increaseQuantity());
         ivDecrease.setOnClickListener(v -> decreaseQuantity());

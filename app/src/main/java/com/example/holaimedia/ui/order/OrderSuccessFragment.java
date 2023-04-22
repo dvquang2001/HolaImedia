@@ -4,10 +4,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,6 +23,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OrderSuccessFragment extends BaseOrderFragment {
+    private ImageView ivEmptyList;
+    private TextView tvEmptyList;
     private FirebaseFirestore db;
     private RecyclerView rcvOrderSuccess;
     private OrderAdapter orderAdapter;
@@ -38,6 +40,8 @@ public class OrderSuccessFragment extends BaseOrderFragment {
 
         userID = SplashActivity.sharedPreferences.getString(SplashActivity.USER_ID, null);
 
+        ivEmptyList = root.findViewById(R.id.ivEmptyList);
+        tvEmptyList = root.findViewById(R.id.tvEmptyList);
         rcvOrderSuccess = root.findViewById(R.id.rcvOrderSuccess);
         rcvOrderSuccess.setLayoutManager(new LinearLayoutManager(getActivity()));
         orderList = new ArrayList<>();
@@ -63,8 +67,21 @@ public class OrderSuccessFragment extends BaseOrderFragment {
             } else {
                 Toast.makeText(getActivity(), "Error" + task.getException(), Toast.LENGTH_SHORT).show();
             }
+            setupRecyclerView();
         });
 
         return root;
+    }
+
+    private void setupRecyclerView() {
+        if(orderList.isEmpty()) {
+            rcvOrderSuccess.setVisibility(View.GONE);
+            tvEmptyList.setVisibility(View.VISIBLE);
+            ivEmptyList.setVisibility(View.VISIBLE);
+        } else {
+            rcvOrderSuccess.setVisibility(View.VISIBLE);
+            tvEmptyList.setVisibility(View.GONE);
+            ivEmptyList.setVisibility(View.GONE);
+        }
     }
 }

@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -13,14 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HolaImedia"
         tools:targetApi="31">
-        <activity
-            android:name=".activity.user.UserPolicyActivity"
+        <activity android:name=".activity.delivery.DeliveryOrderManagement"
             android:exported="false" />
         <activity
-            android:name=".activity.user.ModifyInformationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.user.InformationActivity"
+            android:name=".activity.delivery.HolaMapActivity"
             android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
@@ -35,12 +34,24 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
+            android:value="AIzaSyAQgkxFbuY3SgS8z0gOsoMkRKU9tMHmXeI" />
 
         <activity
             android:name=".activity.delivery.MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".activity.WalletActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.user.UserPolicyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.user.ModifyInformationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.user.InformationActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.food.OrderActivity"
             android:exported="false" />
@@ -53,16 +64,17 @@
             android:name=".activity.food.CartActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.digital.user_water.AddUserWaterActivity"
+            android:name=".activity.digital.bill_payment.WaterPayment"
             android:exported="false" />
         <activity
             android:name=".activity.digital.bill_payment.DetailpaymentActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.digital.bill_payment.BillpaymentMainActivity"
+            android:name=".activity.digital.bill_payment.BillPaymentActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.digital.bill_payment.BillpaymentwaterMainActivity"
+            android:name=".activity.digital.bill_payment.BillPaymentWaterActivity"
+            android:windowSoftInputMode="adjustNothing"
             android:exported="false" />
         <activity
             android:name=".activity.digital.message.MessageActivity"
@@ -81,12 +93,6 @@
             android:exported="false" />
         <activity
             android:name=".activity.face.Check_loginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.delivery.Page2Activity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.delivery.ShipActivity"
             android:exported="false" />
         <activity
             android:name=".activity.transaction.RutTienActivity"

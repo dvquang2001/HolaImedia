@@ -1,7 +1,6 @@
-package com.example.holaimedia.activity.digital.user_water;
+package com.example.holaimedia.activity.digital.bill_payment;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -14,7 +13,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.UUID;
 
-public class AddUserWaterActivity extends AppCompatActivity {
+public class WaterPayment extends AppCompatActivity {
     private EditText txtsdt, txtma, txttien, txtdiachi,txthoten,txtkyhan;
 
     private Button btnthem;
@@ -23,7 +22,8 @@ public class AddUserWaterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_user_water);
+        setContentView(R.layout.activity_add_water_bill);
+
         txtdiachi=findViewById(R.id.txtaddress);
         txtma=findViewById(R.id.txtmanuoc2);
         txttien=findViewById(R.id.txttiennuoc);
@@ -37,7 +37,6 @@ public class AddUserWaterActivity extends AppCompatActivity {
         btnthem.setOnClickListener(v -> {
 
             UUID uuid = UUID.randomUUID();
-            String chuoi=uuid.toString();
             String sdt = txtsdt.getText().toString();
             String kyhan = txtkyhan.getText().toString();
             String ma = txtma.getText().toString();

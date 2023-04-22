@@ -6,6 +6,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.order.OrderFragment">
 
+    <TextView
+        android:id="@+id/tvEmptyList"
+        android:textStyle="italic"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintBottom_toTopOf="@id/ivEmptyList"
+        android:layout_marginBottom="12dp"
+        android:text="@string/empty_list_order"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="24dp"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/ivEmptyList"
+        android:layout_centerInParent="true"
+        android:src="@drawable/empty_box"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvOrderSuccess"
         android:layout_width="match_parent"

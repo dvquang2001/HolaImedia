@@ -3,193 +3,222 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/purple_200">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnViettel"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/button_backgroud"
-        android:text="@string/viettel_card"
-        app:layout_constraintEnd_toStartOf="@id/btnVina"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnVina"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="24dp"
-        android:background="@drawable/button_backgroud"
-        android:text="@string/vinaphone_card"
-        app:layout_constraintEnd_toStartOf="@id/btnMobi"
-        app:layout_constraintStart_toEndOf="@id/btnViettel"
-        app:layout_constraintTop_toTopOf="@id/btnViettel" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnMobi"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/button_backgroud"
-        android:text="@string/mobiphone_card"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btnVina"
-        app:layout_constraintTop_toTopOf="@id/btnViettel" />
-
-    <View
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutBanner"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/purple_200"
-        app:layout_constraintTop_toBottomOf="@id/btnViettel" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnCard10"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="64dp"
-        android:background="@drawable/button_backgroud"
-        android:text="10.000"
-        app:layout_constraintStart_toStartOf="@id/btnViettel"
-        app:layout_constraintTop_toBottomOf="@id/btnViettel" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnCard20"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@drawable/button_backgroud"
-        android:text="20.000"
-        app:layout_constraintStart_toStartOf="@id/btnVina"
-        app:layout_constraintTop_toTopOf="@id/btnCard10" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnCard50"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@drawable/button_backgroud"
-        android:text="50.000"
-        app:layout_constraintStart_toStartOf="@id/btnMobi"
-        app:layout_constraintTop_toTopOf="@id/btnCard10" />
-
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnCard100"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/button_backgroud"
-        android:text="100.000"
-        app:layout_constraintStart_toStartOf="@id/btnViettel"
-        app:layout_constraintTop_toBottomOf="@id/btnCard10" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnCard200"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/button_backgroud"
-        android:text="200.000"
-        app:layout_constraintStart_toStartOf="@id/btnVina"
-        app:layout_constraintTop_toBottomOf="@id/btnCard20" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnCard500"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/button_backgroud"
-        android:text="500.000"
-        app:layout_constraintStart_toStartOf="@id/btnMobi"
-        app:layout_constraintTop_toBottomOf="@id/btnCard50" />
-
-    <TextView
-        android:id="@+id/tvLoaiTheTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/loai_the"
-        android:textColor="@color/black"
+        android:layout_height="0dp"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="8dp"
+        app:layout_constraintHeight_percent=".1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnCard100" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/tvLoaiThe"
-        android:text="@string/viettel_card"
-        android:textColor="@color/red"
-        android:layout_marginStart="16dp"
-        app:layout_constraintTop_toTopOf="@id/tvLoaiTheTitle"
-        app:layout_constraintStart_toEndOf="@id/tvLoaiTheTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvMenhGiaTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/menh_gia"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvLoaiTheTitle" />
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mobile_recharge"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvMenhGia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/defalut_money"
-        android:textColor="@color/red"
-        app:layout_constraintStart_toStartOf="@id/tvLoaiThe"
-        app:layout_constraintTop_toTopOf="@id/tvMenhGiaTitle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        app:layout_constraintTop_toTopOf="@id/tvMenhGia"
-        app:layout_constraintStart_toEndOf="@id/tvMenhGia"
-        android:layout_marginStart="8dp"
-        android:textColor="@color/red"
-        android:text="VND"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/tvHinhThucThanhToan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/hinh_thuc_thanh_toan"
-        android:textStyle="italic"
-        app:layout_constraintStart_toStartOf="@id/tvMenhGiaTitle"
-        app:layout_constraintTop_toBottomOf="@id/tvMenhGiaTitle" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnThanhToanQuaVi"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="64dp"
-        android:layout_marginTop="24dp"
-        android:textColor="@color/white"
-        android:background="@drawable/button_selected_background"
-        android:text="@string/thanh_toan_qua_vi"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvHinhThucThanhToan" />
+        android:layout_height="0dp"
+        android:background="@drawable/feature_background"
+        android:orientation="vertical"
+        android:paddingHorizontal="8dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutBanner"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="0dp">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:background="@drawable/button_selected_background"
-        android:id="@+id/btnThanhToanNganHang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="64dp"
-        android:textColor="@color/white"
-        android:layout_marginTop="24dp"
-        android:text="@string/thanh_toan_ngan_hang"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnThanhToanQuaVi" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/feature_background"
+            android:orientation="vertical"
+            android:paddingHorizontal="8dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutBanner"
+            app:layout_constraintVertical_bias=".7">
+
+            <TextView
+                android:id="@+id/tvSelect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/page_network"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutSelect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/sub_feature_background"
+                android:elevation="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvSelect">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:paddingHorizontal="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/rvNetwork"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvDenominations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/denominations"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutSelect" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/sub_feature_background"
+                android:elevation="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvDenominations">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:paddingHorizontal="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:paddingBottom="12dp"
+                    android:id="@+id/rvCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/tvLoaiTheTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/loai_the"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutCard" />
+
+            <TextView
+                android:id="@+id/tvLoaiThe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                tools:text="@string/viettel_card"
+                android:textColor="@color/red"
+                app:layout_constraintStart_toEndOf="@id/tvLoaiTheTitle"
+                app:layout_constraintTop_toTopOf="@id/tvLoaiTheTitle" />
+
+            <TextView
+                android:id="@+id/tvMenhGiaTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/menh_gia"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvLoaiTheTitle" />
+
+            <TextView
+                android:id="@+id/tvMenhGia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_title_money"
+                android:textColor="@color/red"
+                app:layout_constraintStart_toStartOf="@id/tvLoaiThe"
+                app:layout_constraintTop_toTopOf="@id/tvMenhGiaTitle" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/vietnam_currency"
+                android:textColor="@color/red"
+                app:layout_constraintStart_toEndOf="@id/tvMenhGia"
+                app:layout_constraintTop_toTopOf="@id/tvMenhGia" />
+
+            <TextView
+                android:id="@+id/tvHinhThucThanhToan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/hinh_thuc_thanh_toan"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@id/tvMenhGiaTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvMenhGiaTitle" />
+
+            <Button
+                android:id="@+id/btnThanhToanQuaVi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="64dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/button_selected_background"
+                android:text="@string/thanh_toan_qua_vi"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHinhThucThanhToan" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnThanhToanNganHang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="64dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/button_selected_background"
+                android:text="@string/thanh_toan_ngan_hang"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnThanhToanQuaVi" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

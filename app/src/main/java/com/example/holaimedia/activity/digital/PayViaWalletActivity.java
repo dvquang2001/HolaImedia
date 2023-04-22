@@ -1,8 +1,10 @@
 package com.example.holaimedia.activity.digital;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,10 +26,11 @@ import java.util.HashMap;
 import java.util.Random;
 
 public class PayViaWalletActivity extends AppCompatActivity {
-    TextView tvNhaMang, tvMenhGia;
-    EditText etMaPin;
-    Button btnThanhToan;
-    AlertDialog.Builder alertBuilder;
+    private ImageView ivBack;
+    private TextView tvNhaMang, tvMenhGia;
+    private EditText etMaPin;
+    private Button btnThanhToan;
+    private AlertDialog.Builder alertBuilder;
     private FirebaseFirestore db;
     private FirebaseDatabase firebaseDatabase;
     private String userID;
@@ -56,6 +59,7 @@ public class PayViaWalletActivity extends AppCompatActivity {
     }
 
     private void initViews() {
+        ivBack = findViewById(R.id.ivBack);
         tvNhaMang = findViewById(R.id.tvNhaMang);
         tvMenhGia = findViewById(R.id.tvMenhGia);
         etMaPin = findViewById(R.id.etMaPin);
@@ -71,6 +75,7 @@ public class PayViaWalletActivity extends AppCompatActivity {
     }
 
     private void initViewListener() {
+        ivBack.setOnClickListener(view -> finish());
         Random random = new Random();
         int seri = random.nextInt(1000000);
         int pin = random.nextInt(1000000000);
@@ -89,6 +94,7 @@ public class PayViaWalletActivity extends AppCompatActivity {
                 );
                 alertBuilder.setPositiveButton("Ok", (dialogInterface, i) -> {
                     dialogInterface.dismiss();
+                    finish();
                     Toast.makeText(PayViaWalletActivity.this, "Cảm ơn đã sử dụng dịch vụ", Toast.LENGTH_LONG).show();
                 });
                 alertBuilder.setNegativeButton("Cancel", (dialogInterface, i) -> dialogInterface.dismiss());
@@ -127,6 +133,7 @@ public class PayViaWalletActivity extends AppCompatActivity {
         firebaseDatabase.getReference().child("Users").child(adminID).setValue(SplashActivity.adminAccount);
     }
 
+    @SuppressLint("SimpleDateFormat")
     private void createTransaction(long totalMoney) {
         Calendar calendar = Calendar.getInstance();
 

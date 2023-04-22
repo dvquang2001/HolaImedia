@@ -1,5 +1,6 @@
 package com.example.holaimedia.adapter.digital;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,8 +24,8 @@ import java.util.List;
 
 public class UserWaterAdapter extends RecyclerView.Adapter<UserWaterAdapter.UserViewHolder> implements Filterable {
     private List<Watercustomer> mListUsers;
-    private List<Watercustomer> mListUsersOld;
-    private Context mContext;
+    private final List<Watercustomer> mListUsersOld;
+    private final Context mContext;
 
     public UserWaterAdapter(Context context, List<Watercustomer> mListUsers) {
         this.mListUsers = mListUsers;
@@ -39,36 +40,26 @@ public class UserWaterAdapter extends RecyclerView.Adapter<UserWaterAdapter.User
         return new UserViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
         final Watercustomer user = mListUsers.get(position);
         if (user == null) {
             return;
         }
-        //   else{
-        // holder.tvMa.setText("Mã:"+user.getMa());
-        holder.tvMa.setText("Mã khách hàng:" + user.getMa());
-        holder.tvName.setText("Họ tên:" + user.getTen());
-        holder.tvSDt.setText("Số điện thoại:" + user.getSodienthoai());
-        holder.tvDiachi.setText("Địa chỉ:" + user.getDiachi());
-        holder.tvkyhan.setText("Kỳ hạn" + user.getKyhan());
-        holder.tvTien.setText("Tiền thanh toán" + user.getTien());
+        holder.tvMa.setText("Mã khách hàng: " + user.getMa());
+        holder.tvName.setText("Họ tên: " + user.getTen());
+        holder.tvSDt.setText("Số điện thoại: " + user.getSodienthoai());
+        holder.tvDiaChi.setText("Địa chỉ: " + user.getDiachi());
+        holder.tvKyHan.setText("Kỳ hạn: " + user.getKyhan());
+        holder.tvTien.setText("Tiền thanh toán: " + user.getTien());
 
-        holder.layout_item.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onClickGotoDetail(user);
-            }
-        });
-        // }
+        holder.layout_item.setOnClickListener(v -> onClickGotoDetail(user));
     }
 
     @Override
     public int getItemCount() {
-        // if(mListUsers !=null){
         return mListUsers.size();
-        // }
-        //  return 0;
     }
 
     @Override
@@ -76,13 +67,16 @@ public class UserWaterAdapter extends RecyclerView.Adapter<UserWaterAdapter.User
         return new Filter() {
             @Override
             protected FilterResults performFiltering(CharSequence constraint) {
-                String etsearch = constraint.toString();
-                if (etsearch.isEmpty()) {
+                String etSearch = constraint.toString();
+                if (etSearch.isEmpty()) {
                     mListUsers = mListUsersOld;
                 } else {
                     List<Watercustomer> list = new ArrayList<>();
                     for (Watercustomer user : mListUsersOld) {
-                        if (user.getMa().toLowerCase().contains(etsearch.toLowerCase())) {
+                        if (user.getMa().toLowerCase().contains(etSearch.toLowerCase())
+                                || user.getTen().toLowerCase().contains(etSearch.toLowerCase())
+                                || user.getSodienthoai().toLowerCase().contains(etSearch.toLowerCase())
+                                || user.getDiachi().toLowerCase().contains(etSearch.toLowerCase())) {
                             list.add(user);
                         }
                     }
@@ -93,6 +87,7 @@ public class UserWaterAdapter extends RecyclerView.Adapter<UserWaterAdapter.User
                 return filterResults;
             }
 
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
                 mListUsers = (List<Watercustomer>) results.values;
@@ -102,19 +97,19 @@ public class UserWaterAdapter extends RecyclerView.Adapter<UserWaterAdapter.User
     }
 
 
-    public class UserViewHolder extends RecyclerView.ViewHolder {
-        private LinearLayout layout_item;
-        private TextView tvDiachi, tvName, tvMa, tvTien, tvSDt, tvkyhan;
+    public static class UserViewHolder extends RecyclerView.ViewHolder {
+        private final LinearLayout layout_item;
+        private final TextView tvDiaChi, tvName, tvMa, tvTien, tvSDt, tvKyHan;
 
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvDiachi = itemView.findViewById(R.id.tv_diachi);
+            tvDiaChi = itemView.findViewById(R.id.tv_diachi);
             layout_item = itemView.findViewById(R.id.layout_item);
             tvMa = itemView.findViewById(R.id.tvma);
             tvName = itemView.findViewById(R.id.tv_name);
             tvTien = itemView.findViewById(R.id.tv_tien);
             tvSDt = itemView.findViewById(R.id.tv_sdt);
-            tvkyhan = itemView.findViewById(R.id.tv_kyhan);
+            tvKyHan = itemView.findViewById(R.id.tv_kyhan);
         }
     }
 
@@ -124,7 +119,6 @@ public class UserWaterAdapter extends RecyclerView.Adapter<UserWaterAdapter.User
         bundle.putSerializable("object_user", user);
         intent.putExtras(bundle);
         mContext.startActivity(intent);
-
     }
 }
 

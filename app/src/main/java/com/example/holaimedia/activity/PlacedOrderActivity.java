@@ -21,15 +21,12 @@ import java.util.Locale;
 
 public class PlacedOrderActivity extends AppCompatActivity {
 
-    int failedCount = 0;
-    private String userID;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_placed_order);
 
-        userID = SplashActivity.sharedPreferences.getString(SplashActivity.USER_ID, null);
+        String userID = SplashActivity.sharedPreferences.getString(SplashActivity.USER_ID, null);
 
         FirebaseFirestore fireStore = FirebaseFirestore.getInstance();
         List<Cart> list = (ArrayList<Cart>) getIntent().getSerializableExtra("itemList");
@@ -37,7 +34,7 @@ public class PlacedOrderActivity extends AppCompatActivity {
         Button btnOk = findViewById(R.id.btnOk);
         btnOk.setOnClickListener(view -> {
             finish();
-            startActivity(new Intent(PlacedOrderActivity.this,MainActivity.class));
+            startActivity(new Intent(PlacedOrderActivity.this, MainActivity.class));
         });
         String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
         String currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
@@ -45,7 +42,7 @@ public class PlacedOrderActivity extends AppCompatActivity {
         if (list != null && list.size() > 0) {
             for (Cart cart : list) {
                 final HashMap<String, Object> cartMap = new HashMap<>();
-                cartMap.put("userId",userID);
+                cartMap.put("userId", userID);
                 cartMap.put("productName", cart.getProductName());
                 cartMap.put("productPrice", cart.getProductPrice());
                 cartMap.put("currentDate", currentDate);
@@ -57,15 +54,9 @@ public class PlacedOrderActivity extends AppCompatActivity {
                 fireStore.collection("Order").add(cartMap).addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         fireStore.collection("Cart").document(cart.getDocumentId()).delete();
-                    } else {
-                        failedCount++;
                     }
                 });
-                if (failedCount > 0) {
-                    Toast.makeText(PlacedOrderActivity.this, "Đơn hàng của bạn đã được thực hiện với đơn " + failedCount + "không thành công", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(PlacedOrderActivity.this, "Đơn hàng của bạn đã được thực hiện", Toast.LENGTH_SHORT).show();
-                }
+                Toast.makeText(PlacedOrderActivity.this, "Đơn hàng của bạn đã được thực hiện", Toast.LENGTH_SHORT).show();
             }
         }
     }
