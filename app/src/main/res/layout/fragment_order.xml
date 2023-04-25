@@ -8,26 +8,37 @@
 
     <TextView
         android:id="@+id/tvEmptyList"
-        android:textStyle="italic"
-        android:layout_centerHorizontal="true"
-        app:layout_constraintBottom_toTopOf="@id/ivEmptyList"
-        android:layout_marginBottom="12dp"
-        android:text="@string/empty_list_order"
-        android:gravity="center"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginHorizontal="24dp"
-        android:layout_height="wrap_content"/>
+        android:layout_marginBottom="12dp"
+        android:gravity="center"
+        android:text="@string/empty_list_order"
+        android:textStyle="italic"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/ivEmptyList" />
 
     <ImageView
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/ivEmptyList"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_centerInParent="true"
         android:src="@drawable/empty_box"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvOrder"

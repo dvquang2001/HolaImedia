@@ -10,6 +10,7 @@ public class OrderManagement {
     private  String Tien;
     private  String Diachigui;
     private  String Diachinhan;
+    private String userId;
 
     public OrderManagement() {
     }
@@ -78,14 +79,22 @@ public class OrderManagement {
         Diachinhan = diachinhan;
     }
 
-    public OrderManagement(String hoten, String gio, String khoiluong, String ngay, String SDT, String tien, String diachigui, String diachinhan) {
-        Hoten = hoten;
-        Gio = gio;
-        Khoiluong = khoiluong;
-        Ngay = ngay;
+    public String getUserId() {
+        return userId;
+    }
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public OrderManagement(String hoten, String gio, String khoiluong, String ngay, String SDT, String tien, String diachigui, String diachinhan, String userId) {
+        this.Hoten = hoten;
+        this.Gio = gio;
+        this.Khoiluong = khoiluong;
+        this.Ngay = ngay;
         this.SDT = SDT;
-        Tien = tien;
-        Diachigui = diachigui;
-        Diachinhan = diachinhan;
+        this.Tien = tien;
+        this.Diachigui = diachigui;
+        this.Diachinhan = diachinhan;
+        this.userId = userId;
     }
 }

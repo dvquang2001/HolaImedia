@@ -1,6 +1,7 @@
 package com.example.holaimedia.activity.digital.data_3g;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -163,7 +164,19 @@ public class Napdata4GActivity extends AppCompatActivity implements OnClickCardS
             String loaiThe = tvLoaiThe.getText().toString();
             String goicuoc = tvGoiCuoc.getText().toString();
             String gia = tvMenhGia.getText().toString();
+            String sdt = edtPhoneNumber.getText().toString();
 
+
+           /* Intent intent = new Intent(getApplicationContext(), CheckFace_NapdataActivity.class);
+            intent.putExtra("goi", goicuoc);
+            intent.putExtra("gia", gia);
+            startActivity(intent);*/
+            Intent intent = new Intent(getApplicationContext(), CheckFacePaymentActivity.class);
+            intent.putExtra("goi", goicuoc);
+            intent.putExtra("gia", gia);
+            intent.putExtra("sdt", sdt);
+            startActivity(intent);
+/*
             if(!validateConditions(goicuoc,loaiThe,gia)) {
                 return;
             }
@@ -184,7 +197,7 @@ public class Napdata4GActivity extends AppCompatActivity implements OnClickCardS
             });
             alertBuilder.setNegativeButton("Cancel", (dialogInterface, i) -> dialogInterface.dismiss());
             AlertDialog alertDialog = alertBuilder.create();
-            alertDialog.show();
+            alertDialog.show();*/
         });
     }
 

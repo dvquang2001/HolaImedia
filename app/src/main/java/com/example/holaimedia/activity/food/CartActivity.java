@@ -3,10 +3,10 @@ package com.example.holaimedia.activity.food;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,9 +18,9 @@ import com.example.holaimedia.activity.PlacedOrderActivity;
 import com.example.holaimedia.activity.auth.SplashActivity;
 import com.example.holaimedia.adapter.food.CartAdapter;
 import com.example.holaimedia.base.BaseFoodActivity;
-import com.example.holaimedia.model.food.Cart;
-import com.example.holaimedia.model.digital.Transaction;
 import com.example.holaimedia.model.auth.User;
+import com.example.holaimedia.model.digital.Transaction;
+import com.example.holaimedia.model.food.Cart;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -46,6 +46,7 @@ public class CartActivity extends BaseFoodActivity {
     private User user;
     private Gson gson;
     private ImageView ivBack, ivEmptyList;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +62,10 @@ public class CartActivity extends BaseFoodActivity {
         adminID = SplashActivity.ADMIN_ID;
         user = gson.fromJson(userJson, User.class);
 
+        initViews();
+        initViewListener();
+
+        progressBar.setVisibility(View.VISIBLE);
         db.collection("Cart").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
@@ -78,11 +83,9 @@ public class CartActivity extends BaseFoodActivity {
             } else {
                 Toast.makeText(this, "Error" + task.getException(), Toast.LENGTH_SHORT).show();
             }
+            progressBar.setVisibility(View.GONE);
             setupRecyclerView();
         });
-
-        initViews();
-        initViewListener();
     }
 
     private void initViews() {
@@ -90,7 +93,9 @@ public class CartActivity extends BaseFoodActivity {
         tvEmptyList = findViewById(R.id.tvEmptyList);
         ivEmptyList = findViewById(R.id.ivEmptyList);
         tvTongTien = findViewById(R.id.tvTongTien);
+        progressBar = findViewById(R.id.progressBar);
         btnThanhToan = findViewById(R.id.btnThanhToan);
+
         rcvCart = findViewById(R.id.rcvCart);
 
         cartList = new ArrayList<>();

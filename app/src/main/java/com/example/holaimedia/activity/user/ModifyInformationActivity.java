@@ -68,7 +68,7 @@ public class ModifyInformationActivity extends AppCompatActivity {
             etName.setText(user.getName(), TextView.BufferType.SPANNABLE);
             etPhoneNumber.setText(user.getPhoneNumber(), TextView.BufferType.SPANNABLE);
             etAddress.setText(user.getAddress(), TextView.BufferType.SPANNABLE);
-            etPinCode.setText(user.getPinCode(), TextView.BufferType.SPANNABLE);
+            etPinCode.setHint(user.getPinCode());
         }
     }
 

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,12 +26,12 @@ import java.util.List;
 public class OrderFragment extends BaseOrderFragment {
     private ImageView ivEmptyList;
     private TextView tvEmptyList;
+    private ProgressBar progressBar;
     private FirebaseFirestore db;
     private RecyclerView rcvOrder;
     private OrderAdapter orderAdapter;
     private List<Order> orderList;
     private String userID;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,6 +49,8 @@ public class OrderFragment extends BaseOrderFragment {
         orderAdapter = new OrderAdapter(orderList);
         rcvOrder.setAdapter(orderAdapter);
 
+        progressBar = root.findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.VISIBLE);
         db.collection("Order").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
@@ -67,6 +70,7 @@ public class OrderFragment extends BaseOrderFragment {
             } else {
                 Toast.makeText(getActivity(), "Error" + task.getException(), Toast.LENGTH_SHORT).show();
             }
+            progressBar.setVisibility(View.GONE);
             setupRecyclerView();
         });
 

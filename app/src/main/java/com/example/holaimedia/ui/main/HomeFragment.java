@@ -16,7 +16,7 @@ import com.example.holaimedia.activity.WalletActivity;
 import com.example.holaimedia.activity.analysis.ChartDeliveryActivity;
 import com.example.holaimedia.activity.analysis.ChartFoodActivity;
 import com.example.holaimedia.activity.auth.SplashActivity;
-import com.example.holaimedia.activity.delivery.DeliveryOrderManagement;
+import com.example.holaimedia.activity.delivery.DeliveryOrderManagementActivity;
 import com.example.holaimedia.activity.delivery.HolaMapActivity;
 import com.example.holaimedia.activity.food.CartActivity;
 import com.example.holaimedia.activity.food.OrderActivity;
@@ -90,7 +90,7 @@ public class HomeFragment extends Fragment {
         layoutWallet.setOnClickListener(view -> startActivity(new Intent(requireContext(), WalletActivity.class)));
         layoutDatDonGiaoHang.setOnClickListener(view -> startActivity(new Intent(requireContext(), HolaMapActivity.class)));
         layoutDanhSachDonHang.setOnClickListener(view -> {
-            Intent intent = new Intent(requireContext(), DeliveryOrderManagement.class);
+            Intent intent = new Intent(requireContext(), DeliveryOrderManagementActivity.class);
             startActivity(intent);
         });
         layoutDonChoXacNhan.setOnClickListener(view -> {

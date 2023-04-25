@@ -116,11 +116,13 @@
             android:background="@drawable/edit_text_update"
             android:elevation="4dp"
             android:hint="@string/id"
+            android:inputType="textPassword"
             android:paddingHorizontal="24dp"
             android:paddingVertical="16dp"
             android:textColorHint="@color/purple_200"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/etAddress" />
+            app:layout_constraintTop_toBottomOf="@id/etAddress"
+            tools:layout_editor_absoluteX="24dp" />
 
         <Button
             android:id="@+id/btnAddFaceIdentified"

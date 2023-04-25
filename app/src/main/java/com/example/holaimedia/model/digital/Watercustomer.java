@@ -1,8 +1,8 @@
 package com.example.holaimedia.model.digital;
 
-
-
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Watercustomer implements Serializable {
     private String Ten;
@@ -71,56 +71,10 @@ public class Watercustomer implements Serializable {
     public void setMa(String ma) {
         Ma = ma;
     }
-/*public Watercustomer(String name, String sodienthoai, String diachi, String tien, String ma) {
-        this.name = name;
-        Sodienthoai = sodienthoai;
-        Diachi = diachi;
-        this.tien = tien;
-        this.ma = ma;
-    }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSodienthoai() {
-        return Sodienthoai;
-    }
-
-    public void setSodienthoai(String sodienthoai) {
-        Sodienthoai = sodienthoai;
-    }
-
-    public String getDiachi() {
-        return Diachi;
-    }
-
-    public void setDiachi(String diachi) {
-        Diachi = diachi;
-    }
-
-    public String getTien() {
-        return tien;
-    }
-
-    public void setTien(String tien) {
-        this.tien = tien;
-    }
-
-    public String getMa() {
-        return ma;
-    }
-
-    public void setMa(String ma) {
-        this.ma = ma;
-    }*/
-/*public Map<String,Object> toMap(){
+    public Map<String,Object> toMap(){
         HashMap<String,Object> result=new HashMap<>();
-        result.put("name",name);
+        result.put("Tien",Tien);
         return result;
-    }*/
+    }
 }

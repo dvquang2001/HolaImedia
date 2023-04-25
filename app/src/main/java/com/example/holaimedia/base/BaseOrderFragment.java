@@ -16,29 +16,20 @@ public abstract class BaseOrderFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     protected boolean isSuccess(Order order) {
-        int orderDay = Integer.parseInt(order.getCurrentDate().substring(0,2));
-        int orderMonth = Integer.parseInt(order.getCurrentDate().substring(4,5));
-        int orderYear = Integer.parseInt(order.getCurrentDate().substring(6,10));
+        int orderHour = Integer.parseInt(order.getCurrentTime().substring(0,2));
 
-        String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
-        int currentDay = Integer.parseInt(currentDate.substring(0,2));
-        int currentMonth = Integer.parseInt(currentDate.substring(4,5));
-        int currentYear = Integer.parseInt(currentDate.substring(6,10));
+        String currentTime = new SimpleDateFormat("HH:mm:ss a", Locale.getDefault()).format(new Date());
+        int currentHour = Integer.parseInt(currentTime.substring(0,2));
 
-        if(currentDay > orderYear) {
+        if(orderHour == 23 && (currentHour == 0 || currentHour == 24)) {
             return true;
-        } else if(currentYear == orderYear) {
-            if(currentMonth > orderMonth) {
-                return true;
-            } else if(currentMonth == orderMonth) {
-                if(Math.abs(currentDay - orderDay) >= 2) {
-                    return true;
-                }
-            }
+        } else if(orderHour == 23 && currentHour == 1) {
+            return true;
+        } else if (currentHour - orderHour >= 1) {
+            return true;
         }
 
         return false;

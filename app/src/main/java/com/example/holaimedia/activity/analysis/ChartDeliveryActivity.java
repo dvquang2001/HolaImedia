@@ -17,57 +17,61 @@ import java.util.List;
 
 public class ChartDeliveryActivity extends AppCompatActivity {
 
-    List<BarEntry> barArrayList;
+    BarChart barChart;
+
+    // variable for our bar data.
+    BarData barData;
+
+    // variable for our bar data set.
+    BarDataSet barDataSet;
+
+    // array list for storing entries.
+    private List<BarEntry> barEntriesArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chart);
 
-        BarChart barChart = findViewById(R.id.barChart);
-        getData();
-        BarDataSet barDataSet = new BarDataSet(barArrayList,"Nothing");
-        BarData barData = new BarData(barDataSet);
+        // initializing variable for bar chart.
+        barChart = findViewById(R.id.barChart);
+
+        // calling method to get bar entries.
+        getBarEntries();
+
+        // creating a new bar data set.
+        barDataSet = new BarDataSet(barEntriesArrayList, "Geeks for Geeks");
+
+        // creating a new bar data and
+        // passing our bar data set.
+        barData = new BarData(barDataSet);
+
+        // below line is to set data
+        // to our bar chart.
         barChart.setData(barData);
-        barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+
+        // adding color to our bar data set.
+        barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+
+        // setting text color.
         barDataSet.setValueTextColor(Color.BLACK);
 
+        // setting text size
         barDataSet.setValueTextSize(16f);
-        barChart.getDescription().setEnabled(true);
+        barChart.getDescription().setEnabled(false);
     }
 
-    private void getData() {
-        barArrayList  = new ArrayList<BarEntry>();
-        barArrayList.add(new BarEntry(1f,10));
-        barArrayList.add(new BarEntry(2f,20));
-        barArrayList.add(new BarEntry(3f,30));
-        barArrayList.add(new BarEntry(4f,40));
-        barArrayList.add(new BarEntry(5f,50));
-        barArrayList.add(new BarEntry(6f,60));
-        barArrayList.add(new BarEntry(7f,70));
-        barArrayList.add(new BarEntry(8f,80));
-        barArrayList.add(new BarEntry(9f,90));
-        barArrayList.add(new BarEntry(10f,100));
-        barArrayList.add(new BarEntry(11f,110));
-        barArrayList.add(new BarEntry(12f,120));
-        barArrayList.add(new BarEntry(13f,130));
-        barArrayList.add(new BarEntry(14f,140));
-        barArrayList.add(new BarEntry(15f,150));
-        barArrayList.add(new BarEntry(16f,160));
-        barArrayList.add(new BarEntry(17f,170));
-        barArrayList.add(new BarEntry(18f,180));
-        barArrayList.add(new BarEntry(19f,190));
-        barArrayList.add(new BarEntry(20f,200));
-        barArrayList.add(new BarEntry(21f,210));
-        barArrayList.add(new BarEntry(22f,220));
-        barArrayList.add(new BarEntry(23f,230));
-        barArrayList.add(new BarEntry(24f,240));
-        barArrayList.add(new BarEntry(25f,250));
-        barArrayList.add(new BarEntry(26f,260));
-        barArrayList.add(new BarEntry(27f,270));
-        barArrayList.add(new BarEntry(28f,280));
-        barArrayList.add(new BarEntry(29f,290));
-        barArrayList.add(new BarEntry(30f,300));
-        barArrayList.add(new BarEntry(31f,310));
+    private void getBarEntries() {
+        // creating a new array list
+        barEntriesArrayList = new ArrayList<>();
+
+        // adding new entry to our array list with bar
+        // entry and passing x and y axis value to it.
+        barEntriesArrayList.add(new BarEntry(1f, 4));
+        barEntriesArrayList.add(new BarEntry(2f, 6));
+        barEntriesArrayList.add(new BarEntry(3f, 8));
+        barEntriesArrayList.add(new BarEntry(4f, 2));
+        barEntriesArrayList.add(new BarEntry(5f, 4));
+        barEntriesArrayList.add(new BarEntry(6f, 1));
     }
 }

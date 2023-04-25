@@ -3,199 +3,220 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/purple_200">
 
-    <TextView
-        android:id="@+id/tv_ma_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="82dp"
-        android:layout_marginTop="5dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/textView27" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        android:text="Mã khách hàng"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutBanner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="8dp"
+        app:layout_constraintHeight_percent=".1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView27" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/txt_kyhan_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="95dp"
-        android:layout_marginTop="28dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/textView25"
-        app:layout_constraintTop_toBottomOf="@+id/txt_diachi_user" />
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtsdt_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="22dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/textView26"
-        app:layout_constraintTop_toBottomOf="@+id/txt_kyhan_user" />
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bill_payment_title"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="28dp"
-        android:text="Tên khách hàng"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/tv_ten_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="79dp"
-        android:layout_marginTop="28dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/tv_ma_user" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/feature_background"
+        android:orientation="vertical"
+        android:paddingHorizontal="8dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutBanner"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-144dp">
 
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="33dp"
-        android:text="Địa chỉ"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        <TextView
+            android:id="@+id/tvCustomerIdTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/customer_id"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txt_diachi_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="135dp"
-        android:layout_marginTop="41dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/textView23"
-        app:layout_constraintTop_toBottomOf="@+id/tv_ten_user" />
+        <TextView
+            android:id="@+id/tvCustomerId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/tvCustomerIdTitle"
+            app:layout_constraintTop_toTopOf="@+id/tvCustomerIdTitle"
+            tools:text="TextView" />
 
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="36dp"
-        android:text="Kỳ thanh toán"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+        <TextView
+            android:id="@+id/tvCustomerNameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/customer_name"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/tvCustomerIdTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvCustomerIdTitle" />
 
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="22dp"
-        android:text="Số điện thoại"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+        <TextView
+            android:id="@+id/tvCustomerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/tvCustomerId"
+            app:layout_constraintTop_toTopOf="@id/tvCustomerNameTitle"
+            tools:text="TextView" />
 
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="27dp"
-        android:text="Số tiền"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView26" />
+        <TextView
+            android:id="@+id/tvCustomerAddressTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/customer_address"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/tvCustomerIdTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvCustomerNameTitle" />
 
-    <TextView
-        android:id="@+id/textView29"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="22dp"
-        android:text="Miễn phí"
-        app:layout_constraintStart_toEndOf="@+id/textView30"
-        app:layout_constraintTop_toBottomOf="@+id/txt_sotien_user" />
+        <TextView
+            android:id="@+id/tvCustomerAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/tvCustomerId"
+            app:layout_constraintTop_toTopOf="@id/tvCustomerAddressTitle"
+            tools:text="TextView" />
 
-    <TextView
-        android:id="@+id/txt_sotien_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="137dp"
-        android:layout_marginTop="27dp"
-        android:text="Miễn phí"
-        app:layout_constraintStart_toEndOf="@+id/textView28"
-        app:layout_constraintTop_toBottomOf="@+id/txtsdt_user" />
+        <TextView
+            android:id="@+id/tvPhoneNumberTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/phone_number"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/tvCustomerIdTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvCustomerAddressTitle" />
 
-    <TextView
-        android:id="@+id/textView30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="22dp"
-        android:text="Phí giao dịch"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+        <TextView
+            android:id="@+id/tvPhoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/tvCustomerId"
+            app:layout_constraintTop_toTopOf="@id/tvPhoneNumberTitle"
+            tools:text="TextView" />
 
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="9dp"
-        android:text="Thanh toán hóa đơn"
-        android:textColor="@color/red"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tvDatePaymentTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/customer_date"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/tvCustomerIdTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvPhoneNumberTitle" />
 
-    <Button
-        android:id="@+id/btn_thanhtoan_water"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="51dp"
-        android:text="Thanh toán"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtmapin_w" />
+        <TextView
+            android:id="@+id/tvDatePayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/tvCustomerId"
+            app:layout_constraintTop_toTopOf="@id/tvDatePaymentTitle"
+            tools:text="TextView" />
 
-    <TextView
-        android:id="@+id/txtmk3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="@color/white"
-        tools:layout_editor_absoluteX="241dp"
-        tools:layout_editor_absoluteY="374dp" />
+        <TextView
+            android:id="@+id/tvMoneyTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/amount_of_money"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/tvCustomerIdTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvDatePaymentTitle" />
 
-    <TextView
-        android:id="@+id/textView35"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="99dp"
-        android:text="Nhập mã pin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+        <TextView
+            android:id="@+id/tvMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/tvCustomerId"
+            app:layout_constraintTop_toTopOf="@id/tvMoneyTitle"
+            tools:text="TextView" />
 
-    <EditText
-        android:id="@+id/txtmapin_w"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="89dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintStart_toEndOf="@+id/textView35"
-        app:layout_constraintTop_toBottomOf="@+id/textView29" />
+        <TextView
+            android:id="@+id/tvFeeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/customer_fee"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/tvCustomerIdTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvMoneyTitle" />
+
+        <TextView
+            android:id="@+id/tvFee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/tvCustomerId"
+            app:layout_constraintTop_toTopOf="@id/tvFeeTitle"
+            android:text="@string/free" />
+
+        <TextView
+            android:id="@+id/tvEnterPinCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/nhap_ma_pin"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/tvCustomerIdTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvFeeTitle" />
+
+        <EditText
+            android:id="@+id/etPinCode"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="-8dp"
+            app:layout_constraintBottom_toBottomOf="@id/tvEnterPinCode"
+            app:layout_constraintStart_toEndOf="@id/tvEnterPinCode" />
+
+        <Button
+            android:id="@+id/btnPay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="72dp"
+            android:background="@drawable/button_background"
+            android:text="@string/pay"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etPinCode" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

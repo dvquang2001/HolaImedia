@@ -16,7 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.holaimedia.R;
-import com.example.holaimedia.activity.digital.bill_payment.DetailpaymentActivity;
+import com.example.holaimedia.activity.digital.bill_payment.DetailPaymentActivity;
 import com.example.holaimedia.model.digital.Watercustomer;
 
 import java.util.ArrayList;
@@ -114,7 +114,7 @@ public class UserWaterAdapter extends RecyclerView.Adapter<UserWaterAdapter.User
     }
 
     private void onClickGotoDetail(Watercustomer user) {
-        Intent intent = new Intent(mContext, DetailpaymentActivity.class);
+        Intent intent = new Intent(mContext, DetailPaymentActivity.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("object_user", user);
         intent.putExtras(bundle);
